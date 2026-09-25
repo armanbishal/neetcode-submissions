@@ -1,0 +1,14 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+        else:
+            countS, countT = {}, {}
+            # Counts are equal so we can loop in any of the strings
+            for i in range(len(s)):
+                countS[s[i]] = 1 + countS.get(s[i], 0)
+                countT[t[i]] = 1 + countT.get(t[i], 0)
+        return countS == countT
+
+# Time complexity: O(n + m)
+# Space complexity: O(1) since we have at most 
